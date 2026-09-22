@@ -39,7 +39,7 @@ const Navbar = () => {
         </div>
 
         {/* Book Appointment Button (Middle) */}
-        <button className="book-btn">📅 Book Appointment</button>
+        <button onClick={() => window.location.href="tel:+919455600938"} className="book-btn">📅 Book Appointment</button>
 
         {/* Open / Close Toggle Button (End) */}
         <button

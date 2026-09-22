@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/Home.css"
+import "../css/Service.css"
 
 import logo from "../src/assets/Friends family dental clinic.png"
 
@@ -34,7 +35,7 @@ const Home = () => {
   const faqData = [
     {
       question: "How can I book an appointment?",
-      answer: "You can book an appointment by calling us directly at +91 98765 43210 or clicking the 'Book Appointment' button at the top of our page."
+      answer: "You can book an appointment by calling us directly at +91 9455600938 or clicking the 'Book Appointment' button at the top of our page."
     },
     {
       question: "What are your dental clinic timings?",
@@ -266,6 +267,18 @@ const Home = () => {
 
       </div>
     </section>
+
+       {/* 5. CALL TO ACTION SECTION */}
+      <section className="cta-section">
+        <div className="container cta-container">
+          <h2>Need Dental Care?</h2>
+          <p>Book a consultation today or call us directly to speak with an expert doctor.</p>
+          <div className="cta-buttons">
+            <a href="#book" className="btn btn-primary">Book Appointment</a>
+            <a href="tel:+919455600938" className="btn btn-outline">Call Now</a>
+          </div>
+        </div>
+      </section>
 
     </div>
   );
