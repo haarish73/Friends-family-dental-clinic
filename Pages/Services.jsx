@@ -31,7 +31,7 @@ const ServicesPage = () => {
       id: 5,
       title: "Braces / Aligners",
       desc: "Straightens crooked teeth and aligns your bite perfectly.",
-      icon: "😁"
+      icon: "🛡️"
     },
     {
       id: 6,
@@ -42,14 +42,6 @@ const ServicesPage = () => {
   ];
 
   const whyChoosePoints = [
-    {
-      title: "Experienced Dentists",
-      desc: "Highly qualified specialists with years of clinical expertise."
-    },
-    {
-      title: "Latest Technology",
-      desc: "Advanced 3D imaging, digital X-rays, and laser tools."
-    },
     {
       title: "Affordable Pricing",
       desc: "Transparent rates with flexible payment and financing options."
