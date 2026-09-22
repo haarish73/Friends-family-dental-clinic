@@ -57,11 +57,11 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/about" onClick={() => setMenuOpen(false)}>
               About Us
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/services" onClick={() => setMenuOpen(false)}>
               Services
