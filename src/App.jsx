@@ -1,18 +1,19 @@
-import { useState } from 'react'
-
-import './App.css'
-
-import Navbar from "../component/Navbar.jsx"
-import Home from "../Pages/Home.jsx"
+import { Routes, Route } from "react-router-dom";
+import Navbar from "../component/Navbar";
+import Home from "../Pages/Home";
+import Services from "../Pages/Services";
 
 function App() {
-
   return (
-   <>
-    <Navbar/>
-    <Home/>
-   </>
-  )
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;

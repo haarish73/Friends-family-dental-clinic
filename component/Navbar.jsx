@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../css/Navbar.css"
-import logo from "../src/assets/Friends family dental clinic.png"
+import "../css/Navbar.css";
+import { Link } from "react-router-dom";
+import logo from "../src/assets/Friends family dental clinic.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
@@ -32,17 +33,13 @@ const Navbar = () => {
   return (
     <nav className="navbar" ref={navRef}>
       <div className="navbar-container">
-
         {/* Logo Section */}
         <div className="logo">
           <img src={logo} alt="logo" />
-         
         </div>
 
         {/* Book Appointment Button (Middle) */}
-        <button className="book-btn">
-          📅 Book Appointment
-        </button>
+        <button className="book-btn">📅 Book Appointment</button>
 
         {/* Open / Close Toggle Button (End) */}
         <button
@@ -55,12 +52,32 @@ const Navbar = () => {
 
         {/* Mobile Navigation Dropdown */}
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
-          <li><a href="/about" onClick={() => setMenuOpen(false)}>About Us</a></li>
-          <li><a href="/services" onClick={() => setMenuOpen(false)}>Services</a></li>
-          <li><a href="/patients" onClick={() => setMenuOpen(false)}>Patient Info</a></li>
-          <li><a href="/contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-          
+          <li>
+            <Link to="/" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" onClick={() => setMenuOpen(false)}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/patients" onClick={() => setMenuOpen(false)}>
+              Patient Info
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Link>
+          </li>
+
           {/* <li className="mobile-contact">
             <div className="contact">
               <span>📞</span>
@@ -71,7 +88,6 @@ const Navbar = () => {
             </div>
           </li> */}
         </ul>
-
       </div>
     </nav>
   );

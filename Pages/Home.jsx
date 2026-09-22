@@ -134,20 +134,20 @@ const Home = () => {
           </div>
 
           <ul className="trust-grid">
-            <li>
+            {/* <li>
               <span className="check-icon">✓</span>
               <div>
                 <h4>Experienced Doctors</h4>
                 <p>Over 15+ years of clinical specialization</p>
               </div>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <span className="check-icon">✓</span>
               <div>
                 <h4>Modern Equipment</h4>
                 <p>3D Imaging & painless laser treatment</p>
               </div>
-            </li>
+            </li> */}
             <li>
               <span className="check-icon">✓</span>
               <div>
