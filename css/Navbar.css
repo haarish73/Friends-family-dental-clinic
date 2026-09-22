@@ -1,0 +1,312 @@
+/* ==========================================
+   RESET & CONTAINER STYLES
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* ==========================================
+   LOGO SECTION
+   ========================================== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 57px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.1;
+}
+
+.logo h2 span {
+  color: #0284c7; /* Clinic Theme Blue */
+}
+
+.logo p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.logo small {
+  font-size: 0.65rem;
+  color: #0d9488; /* Medical Teal */
+  display: block;
+  font-weight: 500;
+}
+
+/* ==========================================
+   NAVIGATION LINKS (DESKTOP)
+   ========================================== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin-left: 5%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0284c7;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0284c7;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   RIGHT SECTION (PHONE & BOOK BUTTON)
+   ========================================== */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact span {
+  font-size: 1.3rem;
+  background-color: #f0f9ff;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.contact small {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+.book-btn {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #ffffff;
+  border: none;
+  padding: 1.3rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.book-btn:hover {
+  background: linear-gradient(135deg, #0369a1, #075985);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(2, 132, 199, 0.35);
+}
+
+.book-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   HAMBURGER BUTTON (HIDDEN ON DESKTOP)
+   ========================================== */
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: #1e293b;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-btn:hover {
+  background-color: #f1f5f9;
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE STYLES)
+   ========================================== */
+
+/* Laptop / Small Desktop (Max Width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+  }
+
+  .right-section {
+    gap: 1rem;
+  }
+
+  .book-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet & Mobile Screens (Max Width: 880px) */
+@media screen and (max-width: 880px) {
+  .menu-btn {
+    display: block; /* Show hamburger button */
+  }
+
+  /* Slide-down mobile menu */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease, visibility 0.3s ease;
+  }
+
+  /* Active state when menuOpen is true */
+  .nav-links.active {
+    max-height: 400px;
+    opacity: 1;
+    visibility: visible;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .nav-links a::after {
+    display: none; /* Hide hover underline effect on mobile */
+  }
+
+  .right-section {
+    margin-left: auto;
+    margin-right: 0.75rem;
+  }
+}
+
+/* Mobile Devices (Max Width: 576px) */
+@media screen and (max-width: 576px) {
+  .navbar-container {
+    padding: 0.6rem 1rem;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .logo h2 {
+    font-size: 1.05rem;
+  }
+
+  .logo p {
+    font-size: 0.6rem;
+  }
+
+  .logo small {
+    display: none; /* Hide tagline on smaller phones to keep header clean */
+  }
+
+  .contact {
+    display: none; /* Hide phone details in main header bar on small screens */
+  }
+
+  .book-btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Very Small Devices (Max Width: 380px) */
+@media screen and (max-width: 380px) {
+  .logo h2 {
+    font-size: 0.95rem;
+  }
+
+  .book-btn {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.65rem;
+  }
+}
