@@ -1,20 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../css/Navbar.css";
 import { Link } from "react-router-dom";
-import logo from "../src/assets/Friends family dental clinic.png";
+import logo from "../src/assets/Friends family dental clinic.png"; // ✅ FIXED PATH
+import Form from "../Pages/Form";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   const navRef = useRef(null);
 
   useEffect(() => {
-    // 1. Close menu when clicking outside the navbar
+    // Close menu when clicking outside
     const handleOutsideClick = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setMenuOpen(false);
       }
     };
 
-    // 2. Close menu automatically when window is resized to desktop width (> 768px)
+    // Close menu on resize
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setMenuOpen(false);
@@ -31,65 +34,67 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar" ref={navRef}>
-      <div className="navbar-container">
-        {/* Logo Section */}
-        <div className="logo">
-          <img src={logo} alt="logo" />
+    <>
+      <nav className="navbar" ref={navRef}>
+        <div className="navbar-container">
+
+          {/* Logo */}
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+
+          {/* Book Button */}
+          <button
+            onClick={() => {
+              setShowForm(true);
+              setMenuOpen(false); // ✅ close mobile menu
+            }}
+            className="book-btn"
+          >
+            📅 Book Appointment
+          </button>
+
+          {/* Toggle Button */}
+          <button
+            className="menu-btn"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            {menuOpen ? "✖" : "☰"}
+          </button>
+
+          {/* Nav Links */}
+          <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+            <li>
+              <Link to="/" onClick={() => setMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/services" onClick={() => setMenuOpen(false)}>
+                Services
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/patients" onClick={() => setMenuOpen(false)}>
+                Patient Info
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+
         </div>
+      </nav>
 
-        {/* Book Appointment Button (Middle) */}
-        <button onClick={() => window.location.href="tel:+919455600938"} className="book-btn">📅 Book Appointment</button>
-
-        {/* Open / Close Toggle Button (End) */}
-        <button
-          className="menu-btn"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-        >
-          {menuOpen ? "✖" : "☰"}
-        </button>
-
-        {/* Mobile Navigation Dropdown */}
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          {/* <li>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>
-              About Us
-            </Link>
-          </li> */}
-          <li>
-            <Link to="/services" onClick={() => setMenuOpen(false)}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/patients" onClick={() => setMenuOpen(false)}>
-              Patient Info
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </Link>
-          </li>
-
-          {/* <li className="mobile-contact">
-            <div className="contact">
-              <span>📞</span>
-              <div>
-                <p>+91 98765 43210</p>
-                <small>Call Us Today</small>
-              </div>
-            </div>
-          </li> */}
-        </ul>
-      </div>
-    </nav>
+      {/* ✅ POPUP OUTSIDE NAV */}
+      {showForm && <Form onClose={() => setShowForm(false)} />}
+    </>
   );
 };
 
