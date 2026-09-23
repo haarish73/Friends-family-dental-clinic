@@ -70,7 +70,7 @@ const PatientInformation = () => {
   const phoneNumber = "919455600938";
 
   const message = `
-🦷 *New Patient Form Submission*
+🦷 *New Patient Information Form Submission*
 
 👤 Name: ${formData.fullName}
 📞 Phone: ${formData.phone}
