@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Contact.css"
+import "../css/Service.css"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -82,7 +83,7 @@ const Contact = () => {
                   <span className="icon">📍</span>
                   <div>
                     <strong>Address:</strong>
-                    <p>Friends Family Dental Clinic,<br />Lucknow, India</p>
+                    <p>Friends Family Dental Clinic,<br />X26Q+49X, Rajauli, Uttar Pradesh 226026</p>
                   </div>
                 </div>
 
@@ -216,19 +217,31 @@ const Contact = () => {
         <div className="container">
           <div className="map-header">
             <h2>Find Our Clinic Location</h2>
-            <p>Conveniently located in Hyderabad, Telangana.</p>
+            <p>Conveniently located in X26Q+49X, Rajauli, Uttar Pradesh 226026.</p>
           </div>
           <div className="map-wrapper">
-            <iframe
-              title="Friends Family Dental Clinic Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.3160413565!2d78.2679586118338!3d17.412299801389363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+           <iframe
+  title="Friends Family Dental Clinic Location"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.2234383689247!2d81.03808769999999!3d26.9598227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399959006786ee27%3A0xec3828ad13267d7d!2sFriends%20Family%20Dental%20clinic!5e0!3m2!1sen!2sin!4v1790141763262!5m2!1sen!2sin"
+  width="100%"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="strict-origin-when-cross-origin"
+></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CALL TO ACTION SECTION */}
+      <section className="cta-section">
+        <div className="container cta-container">
+          <h2>Need Dental Care?</h2>
+          <p>Book a consultation today or call us directly to speak with an expert doctor.</p>
+          <div className="cta-buttons">
+            <a href="#book" className="btn btn-primary">Book Appointment</a>
+            <a href="tel:+1234567890" className="btn btn-outline">Call Now</a>
           </div>
         </div>
       </section>

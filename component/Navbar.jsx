@@ -77,7 +77,7 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="/patients" onClick={() => setMenuOpen(false)}>
+              <Link to="/patient-info" onClick={() => setMenuOpen(false)}>
                 Patient Info
               </Link>
             </li>
