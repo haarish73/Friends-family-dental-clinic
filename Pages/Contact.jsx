@@ -17,9 +17,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you ${formData.fullName}! Your request has been received.`);
-    setFormData({ fullName: "", phone: "", email: "", service: "", message: "" });
+    const phoneNumber = "+919455600938"
+    const message = `
+    New Appointment Schedule
+    FullName : ${formData.fullName || N/A},
+    Phone : ${formData.phone || N/A},
+    email : ${formData.email || N/A},
+    Service : ${formData.service || N/A},
+    Message : ${formData.message || N/A},
+    `;
+
+  const encodedMessage = encodeURIComponent(message);
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
+
+  setSubmitted(true);
   };
+
+
 
   return (
     <div className="contact-page">
